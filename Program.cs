@@ -11,8 +11,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.MapGet("/products", () =>
 {
     return new[]

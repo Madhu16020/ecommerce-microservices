@@ -3,15 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/YOUR_USERNAME/ecommerce-microservices.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t productservice ./ProductService'
+                sh 'docker build --no-cache -t productservice ./ProductService'
             }
         }
 
